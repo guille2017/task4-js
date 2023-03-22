@@ -99,13 +99,14 @@
                                               
                                                 <thead>
                                                   <tr>
-                                                    <th colspan="3">Events statistics</th>
+                                                    <th colspan="4">Events statistics</th>
                                                     
                                                   </tr>
                                                   
                                                     <tr>
-                                                      <th>Events width the highest percentage of attendance</th>
-                                                      <th>Events width the lowest percentage of attendance</th>
+                                                      <th>Category</th>
+                                                      <th>Events width the highest percentage of attendance / estimate</th>
+                                                      <th>Events width the lowest percentage of attendance / assistance</th>
                                                         <th>Event width larger capacity</th> 
                                                     </tr>
                                                     
@@ -116,9 +117,11 @@
                                                   
                                                     
                                                   <tr>
+                                                    <td>ToTales:</td>
                                                     <td>Metallica in concert: 99.5962%</td>
                                                     <td>Jurassic Park: 65.89%</td>
                                                       <td>New York 2023: 1000000</td>
+                                                     
                                                     
                                                   </tr>
 
@@ -127,7 +130,7 @@
                                                 <thead>
 
                                                   <tr>
-                                                    <th colspan="3">Upcoming events statistics by Category </th>
+                                                    <th colspan="4">Upcoming events statistics by Category </th>
                                                     
                                                   </tr>
                                                 </thead> 
@@ -135,43 +138,43 @@
                                                     <tr>
                                                       <th>Categories</th>
                                                       <th>Revenues</th>
-                                                        <th>Percentage of attendance</th> 
+                                                        <th colspan="2">Percentage of attendance</th> 
                                                     </tr>
                                                     <tr>
                                                       <td>Food</td>
                                                       <td>500000</td>
-                                                        <td>100.00%</td>
+                                                        <td colspan="2">100.00%</td>
                                                       
                                                     </tr>
                                                     <tr>
                                                       <td>Books</td>
                                                       <td>500000</td>
-                                                        <td>68.67%</td>
+                                                        <td colspan="2">68.67%</td>
                                                       
                                                     </tr>
                                                     <tr>
                                                       <td>Party</td>
                                                       <td>540000</td>
-                                                        <td>87.50%</td>
+                                                        <td colspan="2">87.50%</td>
                                                       
                                                     </tr>
                                                     <tr>
                                                       <td>Race</td>
                                                       <td>7191000</td>
-                                                        <td>72.03%</td>
+                                                        <td colspan="2">72.03%</td>
                                                       
                                                     </tr>
                                                     <tr>
                                                       <td>Concert</td>
                                                       <td>200000000</td>
-                                                        <td>100.00%</td>
+                                                        <td colspan="2">100.00%</td>
                                                       
                                                     </tr>
 
                                                     <tr>
                                                       <td>Museum</td>
                                                       <td>25340</td>
-                                                        <td>91.51%</td>
+                                                        <td colspan="2">91.51%</td>
                                                       
                                                     </tr>
                                                   </tbody>
@@ -181,7 +184,7 @@
 
                                               <thead>
                                                 <tr>
-                                                  <th colspan="3">Past Events statistics by category</th>
+                                                  <th colspan="4">Past Events statistics by category</th>
                                                   
                                                 </tr>
                                             </thead>
@@ -189,51 +192,51 @@
                                                   <tr>
                                                     <th>Categories</th>
                                                     <th>Revenues</th>
-                                                      <th>Percentage of attendance</th> 
+                                                      <th colspan="2">Percentage of attendance</th> 
                                                   </tr>
                                                   <tr>
                                                     <td>Food</td>
                                                     <td>2691580</td>
-                                                      <td>89.72%</td>
+                                                      <td colspan="2">89.72%</td>
                                                     
                                                   </tr>
                                                   <tr>
                                                     <td>Museum</td>
                                                     <td>54827</td>
-                                                      <td>66.66%</td>
+                                                      <td colspan="2">66.66%</td>
                                                     
                                                   </tr>
                                                   <tr>
                                                     <td>Concert</td>
                                                     <td>37455080</td>
-                                                      <td>93.64%</td>
+                                                      <td colspan="2">93.64%</td>
                                                     
                                                   </tr>
                                                   <tr>
                                                     <td>Race</td>
                                                     <td>5032705</td>
-                                                      <td>96.07%</td>
+                                                      <td colspan="2">96.07%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
                                                     <td>Books</td>
                                                     <td>255974</td>
-                                                      <td>82.46%</td>
+                                                      <td colspan="2">82.46%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
                                                     <td>Cinema</td>
                                                     <td>7500</td>
-                                                      <td>75.00%</td>
+                                                      <td colspan="2">75.00%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
                                                     <td>Party</td>
                                                     <td>457810</td>
-                                                      <td>91.56%</td>
+                                                      <td colspan="2">91.56%</td>
                                                     
                                                   </tr>
 
@@ -254,14 +257,14 @@
       const url = 'https://mindhub-xj03.onrender.com/api/amazing'
         fetch(url)
             .then( response => response.json() )
-            .then( data => mostrarData(data) )
+            .then( data => mostrarData(data.events) )
             .catch( error => console.log(error) )
 
         const mostrarData = (data) => {
             console.log(data)
             let body = ""
             for (var i = 0; i < data.length; i++) {      
-               body+=`<tr><td>${data[i].category}</td><td>${data[i].precio}</td><td>${data[i].asisstence}</td></tr>`
+               body+=`<tr><td>${data[i].category}</td><td>${data[i].estimate}</td><td>${data[i].assistance}</td><td>${data[i].capacity}</td></tr>`
             }
             document.getElementById('data').innerHTML = body
             //console.log(body)
