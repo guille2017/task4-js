@@ -99,11 +99,12 @@
                                               
                                                 <thead>
                                                   <tr>
-                                                    <th colspan="4">Events statistics</th>
+                                                    <th colspan="5">Events statistics</th>
                                                     
                                                   </tr>
                                                   
                                                     <tr>
+                                                      <th>Date</th>
                                                       <th>Category</th>
                                                       <th>Events width the highest percentage of attendance / estimate</th>
                                                       <th>Events width the lowest percentage of attendance / assistance</th>
@@ -117,6 +118,7 @@
                                                   
                                                     
                                                   <tr>
+                                                    <td class="table-warning"></td>
                                                     <td class="table-warning">ToTales:</td>
                                                     <td class="table-warning">Metallica in concert: 99.5962%</td>
                                                     <td class="table-warning">Jurassic Park: 65.89%</td>
@@ -130,49 +132,49 @@
                                                 <thead>
 
                                                   <tr>
-                                                    <th colspan="4">Upcoming events statistics by Category </th>
+                                                    <th colspan="5">Upcoming events statistics by Category </th>
                                                     
                                                   </tr>
                                                 </thead> 
                                                   <tbody>
                                                     <tr>
-                                                      <th>Categories</th>
+                                                      <th colspan="2">Categories</th>
                                                       <th>Revenues</th>
                                                         <th colspan="2">Percentage of attendance</th> 
                                                     </tr>
                                                     <tr>
-                                                      <td>Food</td>
+                                                      <td colspan="2">Food</td>
                                                       <td>500000</td>
                                                         <td colspan="2">100.00%</td>
                                                       
                                                     </tr>
                                                     <tr>
-                                                      <td>Books</td>
+                                                      <td colspan="2">Books</td>
                                                       <td>500000</td>
                                                         <td colspan="2">68.67%</td>
                                                       
                                                     </tr>
                                                     <tr>
-                                                      <td>Party</td>
+                                                      <td colspan="2">Party</td>
                                                       <td>540000</td>
                                                         <td colspan="2">87.50%</td>
                                                       
                                                     </tr>
                                                     <tr>
-                                                      <td>Race</td>
+                                                      <td colspan="2">Race</td>
                                                       <td>7191000</td>
                                                         <td colspan="2">72.03%</td>
                                                       
                                                     </tr>
                                                     <tr>
-                                                      <td>Concert</td>
+                                                      <td colspan="2">Concert</td>
                                                       <td>200000000</td>
                                                         <td colspan="2">100.00%</td>
                                                       
                                                     </tr>
 
                                                     <tr>
-                                                      <td>Museum</td>
+                                                      <td colspan="2">Museum</td>
                                                       <td>25340</td>
                                                         <td colspan="2">91.51%</td>
                                                       
@@ -184,57 +186,57 @@
 
                                               <thead>
                                                 <tr>
-                                                  <th colspan="4">Past Events statistics by category</th>
+                                                  <th colspan="5">Past Events statistics by category</th>
                                                   
                                                 </tr>
                                             </thead>
                                                 <tbody>
                                                   <tr>
-                                                    <th>Categories</th>
+                                                    <th colspan="2">Categories</th>
                                                     <th>Revenues</th>
                                                       <th colspan="2">Percentage of attendance</th> 
                                                   </tr>
                                                   <tr>
-                                                    <td>Food</td>
+                                                    <td colspan="2">Food</td>
                                                     <td>2691580</td>
                                                       <td colspan="2">89.72%</td>
                                                     
                                                   </tr>
                                                   <tr>
-                                                    <td>Museum</td>
+                                                    <td colspan="2">Museum</td>
                                                     <td>54827</td>
                                                       <td colspan="2">66.66%</td>
                                                     
                                                   </tr>
                                                   <tr>
-                                                    <td>Concert</td>
+                                                    <td colspan="2">Concert</td>
                                                     <td>37455080</td>
                                                       <td colspan="2">93.64%</td>
                                                     
                                                   </tr>
                                                   <tr>
-                                                    <td>Race</td>
+                                                    <td colspan="2">Race</td>
                                                     <td>5032705</td>
                                                       <td colspan="2">96.07%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
-                                                    <td>Books</td>
+                                                    <td colspan="2">Books</td>
                                                     <td>255974</td>
                                                       <td colspan="2">82.46%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
-                                                    <td>Cinema</td>
+                                                    <td colspan="2">Cinema</td>
                                                     <td>7500</td>
                                                       <td colspan="2">75.00%</td>
                                                     
                                                   </tr>
 
                                                   <tr>
-                                                    <td>Party</td>
+                                                    <td colspan="2">Party</td>
                                                     <td>457810</td>
                                                       <td colspan="2">91.56%</td>
                                                     
@@ -264,7 +266,7 @@
             console.log(data)
             let body = ""
             for (var i = 0; i < data.length; i++) {      
-               body+=`<tr><td>${data[i].category}</td><td>${data[i].estimate}</td><td>${data[i].assistance}</td><td>${data[i].capacity}</td></tr>`
+               body+=`<tr><td>${data[i].date}</td><td>${data[i].category}</td><td>${data[i].estimate}</td><td>${data[i].assistance}</td><td>${data[i].capacity}</td></tr>`
             }
             document.getElementById('data').innerHTML = body
             //console.log(body)
